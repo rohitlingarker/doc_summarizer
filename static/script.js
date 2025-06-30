@@ -17,5 +17,5 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
   });
 
   const data = await res.json();
-  document.getElementById('summary').innerText = marked(data.summary) || data.error || "No response.";
+  document.getElementById('summary').innerHTML = marked.parse(data.summary) || data.error || "No response.";
 });
